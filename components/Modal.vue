@@ -10,19 +10,25 @@
             нашим сервисам бесплатно. Попробуйте сейчас!
           </p>
           <div class="block-service">
-            <div class="service">
-              <img src="@/assets/conslogo.svg" alt="КонсультантПлюс" />
-              <div>
-                <h3 class="title-service">Система КонсультантПлюс</h3>
-                <p class="description-service">Полный доступ • 2 дня за 0₽</p>
+            <div>
+              <div class="service">
+                <img src="@/assets/conslogo.svg" alt="КонсультантПлюс" />
+                <div>
+                  <h3 class="title-service">Система КонсультантПлюс</h3>
+                  <p class="description-service">Полный доступ • 2 дня за 0₽</p>
+                </div>
               </div>
+              <img src="@/assets/lock.svg" class="lock"/>
             </div>
-            <div class="service">
-              <img src="@/assets/cdklogo.svg" alt="Что делать Консалт" />
-              <div>
-                <h3 class="title-service">Сервис Что делать Консалт</h3>
-                <p class="description-service">22 сервиса • 7 дней за 0₽</p>
+            <div>
+              <div class="service">
+                <img src="@/assets/cdklogo.svg" alt="Что делать Консалт" />
+                <div>
+                  <h3 class="title-service">Сервис Что делать Консалт</h3>
+                  <p class="description-service">22 сервиса • 7 дней за 0₽</p>
+                </div>
               </div>
+              <img src="@/assets/lock.svg" class="lock"/>
             </div>
           </div>
         </div>
@@ -47,7 +53,7 @@
             </div>
             <button type="submit">Отправить</button>
             <p class="right-description">
-              Нажимая «Отправить», вы соглашаетесь <br>
+              Нажимая «Отправить», вы соглашаетесь <br />
               <a href="#">с политикой конфиденциальности</a>
             </p>
           </form>
@@ -129,7 +135,7 @@ const submitForm = () => {
 }
 
 .left-pane {
-  background: #5E61BC;
+  background: #5e61bc;
   color: white;
   padding: 20px 24px 20px 24px;
   border-radius: 24px;
@@ -178,12 +184,19 @@ const submitForm = () => {
 }
 
 .service {
- 
   display: flex;
   padding: 16px;
   align-items: center;
   background-color: #7e81c9;
   border-radius: 8px;
+  position: relative;
+}
+
+.service lock {
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
 }
 
 .block-service {
@@ -247,7 +260,7 @@ form select {
 form button {
   padding: 8px;
   border-radius: 24px;
-  background: #5E61BC;
+  background: #5e61bc;
   color: white;
   font-size: 14px;
   font-weight: 400;
@@ -256,6 +269,4 @@ form button {
   cursor: pointer;
   border: none;
 }
-
-
 </style>
