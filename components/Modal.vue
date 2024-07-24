@@ -10,25 +10,37 @@
             нашим сервисам бесплатно. Попробуйте сейчас!
           </p>
           <div class="block-service">
-            <div>
-              <div class="service">
-                <img src="@/assets/conslogo.svg" alt="КонсультантПлюс" />
-                <div>
-                  <h3 class="title-service">Система КонсультантПлюс</h3>
-                  <p class="description-service">Полный доступ • 2 дня за 0₽</p>
-                </div>
+            <div class="service">
+              <img
+                src="@/assets/conslogo.svg"
+                alt="КонсультантПлюс"
+                class="service-img"
+              />
+              <div class="service-info">
+                <h3 class="title-service">Система КонсультантПлюс</h3>
+                <p class="description-service">Полный доступ • 2 дня за 0₽</p>
               </div>
-              <img src="@/assets/lock.svg" class="lock"/>
+              <img
+                class="lock-icon"
+                src="@/assets/lock-icon.svg"
+                alt="Lock Icon"
+              />
             </div>
-            <div>
-              <div class="service">
-                <img src="@/assets/cdklogo.svg" alt="Что делать Консалт" />
-                <div>
-                  <h3 class="title-service">Сервис Что делать Консалт</h3>
-                  <p class="description-service">22 сервиса • 7 дней за 0₽</p>
-                </div>
+            <div class="service">
+              <img
+                src="@/assets/cdklogo.svg"
+                alt="Что делать Консалт"
+                class="service-img"
+              />
+              <div class="service-info">
+                <h3 class="title-service">Сервис Что делать Консалт</h3>
+                <p class="description-service">22 сервиса • 7 дней за 0₽</p>
               </div>
-              <img src="@/assets/lock.svg" class="lock"/>
+              <img
+                class="lock-icon"
+                src="@/assets/lock-icon.svg"
+                alt="Lock Icon"
+              />
             </div>
           </div>
         </div>
@@ -45,6 +57,7 @@
                 v-model="email"
                 placeholder="Электронная почта"
               />
+
               <select v-model="region">
                 <option disabled value="">Выберите регион</option>
                 <option value="region1">Регион 1</option>
@@ -94,6 +107,8 @@ const submitForm = () => {
 </script>
 
 <style scoped lang="scss">
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -111,7 +126,6 @@ const submitForm = () => {
   background: #ffffff;
   border-radius: 26px;
   max-width: 1046px;
-  width: 100%;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -119,28 +133,31 @@ const submitForm = () => {
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 7px;
+  right: 5px;
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 20px;
   cursor: pointer;
 }
 
 .modal-content {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
   background-color: #f5f5f5;
   border-radius: 26px;
 }
+
 
 .left-pane {
   background: #5e61bc;
   color: white;
   padding: 20px 24px 20px 24px;
   border-radius: 24px;
-  flex: 1;
   max-width: 523px;
+  flex: 1 1 auto;
+  font-family: "Open Sans", sans-serif;
 }
 
 .left-title {
@@ -148,6 +165,7 @@ const submitForm = () => {
   font-weight: 700;
   line-height: 38.4px;
   text-align: left;
+  max-width: 475px;
   margin: 20px 0 0 0;
 }
 
@@ -156,26 +174,27 @@ const submitForm = () => {
   font-weight: 400;
   line-height: 28.8px;
   text-align: left;
+  max-width: 475px;
   margin: 24px 0;
 }
 
 .right-pane {
-  padding: 20px;
-  flex: 1;
+  padding: 20px 24px;
+  max-width: 523px;
+  flex: 1 1 auto;
+  font-family: "Open Sans", sans-serif;
 }
 
 .right-title {
   font-size: 16px;
   font-weight: 700;
   line-height: 24px;
-  margin-top: 17px;
-  margin-bottom: 24px;
+  margin: 17px 0 0 0;
 }
 
 .right-description {
   margin: 8px auto 0;
-  max-width: 443px;
-  text-align: center;
+  letter-spacing: 0.1px;
   font-size: 14px;
   font-weight: 400;
   line-height: 21px;
@@ -190,36 +209,50 @@ const submitForm = () => {
   background-color: #7e81c9;
   border-radius: 8px;
   position: relative;
-}
-
-.service lock {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  bottom: 0;
+  max-width: 475px;
+  gap: 7px;
+  outline: 1px solid #a4a7d9;
 }
 
 .block-service {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  padding-bottom: 20px;
+}
+
+.service-info {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
 }
 
 .description-service {
   margin: 0;
+  font-size: 16px;
 }
 
 .title-service {
   margin: 0;
+  font-size: 16px;
 }
 
-.service img {
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
+.lock-icon {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  width: 32px;
+  height: 32px;
+}
+
+.service-img {
+  width: 48px;
+  height: 48px;
 }
 
 form {
+  margin-top: 24px;
   display: flex;
   flex-direction: column;
 }
@@ -246,8 +279,13 @@ form input {
   text-align: left;
 }
 
+form input::placeholder {
+  letter-spacing: 0.4px;
+  padding-left: 8px;
+}
+
 form select {
-  padding: 10px;
+  padding: 8px;
   border: none;
   border-radius: 24px;
   color: #737278;
@@ -255,6 +293,10 @@ form select {
   font-weight: 400;
   line-height: 21px;
   text-align: left;
+  appearance: none;
+  letter-spacing: 0.3px;
+  background: url("assets/arrow.svg") no-repeat right #fff;
+  background-position-x: 452px;
 }
 
 form button {
@@ -268,5 +310,6 @@ form button {
   margin-top: 24px;
   cursor: pointer;
   border: none;
+  letter-spacing: 0.5px;
 }
 </style>
