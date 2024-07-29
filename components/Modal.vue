@@ -96,7 +96,6 @@ const email = ref("");
 const region = ref("");
 
 const submitForm = () => {
-  // Логика отправки формы
   console.log({
     name: name.value,
     phone: phone.value,
